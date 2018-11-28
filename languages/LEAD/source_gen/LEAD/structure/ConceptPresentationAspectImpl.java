@@ -13,9 +13,13 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
   private ConceptPresentation props_AttributeList;
   private ConceptPresentation props_Check;
   private ConceptPresentation props_Enrich;
+  private ConceptPresentation props_From;
+  private ConceptPresentation props_Match;
+  private ConceptPresentation props_NamedStreamReference;
   private ConceptPresentation props_Query;
-  private ConceptPresentation props_Select;
   private ConceptPresentation props_StreamDefinition;
+  private ConceptPresentation props_StreamList;
+  private ConceptPresentation props_StreamReference;
 
   @Override
   @Nullable
@@ -50,6 +54,27 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
           props_Enrich = cpb.create();
         }
         return props_Enrich;
+      case LanguageConceptSwitch.From:
+        if (props_From == null) {
+          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.rawPresentation("From");
+          props_From = cpb.create();
+        }
+        return props_From;
+      case LanguageConceptSwitch.Match:
+        if (props_Match == null) {
+          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.rawPresentation("Match");
+          props_Match = cpb.create();
+        }
+        return props_Match;
+      case LanguageConceptSwitch.NamedStreamReference:
+        if (props_NamedStreamReference == null) {
+          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.presentationByName();
+          props_NamedStreamReference = cpb.create();
+        }
+        return props_NamedStreamReference;
       case LanguageConceptSwitch.Query:
         if (props_Query == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
@@ -57,13 +82,6 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
           props_Query = cpb.create();
         }
         return props_Query;
-      case LanguageConceptSwitch.Select:
-        if (props_Select == null) {
-          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
-          cpb.rawPresentation("Select");
-          props_Select = cpb.create();
-        }
-        return props_Select;
       case LanguageConceptSwitch.StreamDefinition:
         if (props_StreamDefinition == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
@@ -71,6 +89,20 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
           props_StreamDefinition = cpb.create();
         }
         return props_StreamDefinition;
+      case LanguageConceptSwitch.StreamList:
+        if (props_StreamList == null) {
+          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.rawPresentation("StreamList");
+          props_StreamList = cpb.create();
+        }
+        return props_StreamList;
+      case LanguageConceptSwitch.StreamReference:
+        if (props_StreamReference == null) {
+          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.presentationByReference(0xebf7f592fe9245eeL, 0xaac5a2d99c69cfa1L, 0x45a737ba1a53cafdL, 0x45a737ba1a53cafeL, "stream", "", "");
+          props_StreamReference = cpb.create();
+        }
+        return props_StreamReference;
     }
     return null;
   }

@@ -13,9 +13,13 @@ public final class LanguageConceptSwitch {
   public static final int AttributeList = 1;
   public static final int Check = 2;
   public static final int Enrich = 3;
-  public static final int Query = 4;
-  public static final int Select = 5;
-  public static final int StreamDefinition = 6;
+  public static final int From = 4;
+  public static final int Match = 5;
+  public static final int NamedStreamReference = 6;
+  public static final int Query = 7;
+  public static final int StreamDefinition = 8;
+  public static final int StreamList = 9;
+  public static final int StreamReference = 10;
 
   public LanguageConceptSwitch() {
     LanguageConceptIndexBuilder builder = new LanguageConceptIndexBuilder(0xebf7f592fe9245eeL, 0xaac5a2d99c69cfa1L);
@@ -23,9 +27,13 @@ public final class LanguageConceptSwitch {
     builder.put(0x4d5ca23b0aeaecdeL, AttributeList);
     builder.put(0xe01c95e890f4233L, Check);
     builder.put(0xe01c95e890f4231L, Enrich);
+    builder.put(0x45a737ba1a53cddeL, From);
+    builder.put(0xe01c95e890f4230L, Match);
+    builder.put(0x104ecb43706eb008L, NamedStreamReference);
     builder.put(0xe01c95e890f4209L, Query);
-    builder.put(0xe01c95e890f4230L, Select);
     builder.put(0xe01c95e890f4232L, StreamDefinition);
+    builder.put(0x45a737ba1a53ede4L, StreamList);
+    builder.put(0x45a737ba1a53cafdL, StreamReference);
     myIndex = builder.seal();
   }
 

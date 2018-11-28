@@ -31,6 +31,7 @@
     </language>
     <language id="ceab5195-25ea-4f22-9b92-103b95ca8c0c" name="jetbrains.mps.lang.core">
       <concept id="1133920641626" name="jetbrains.mps.lang.core.structure.BaseConcept" flags="ng" index="2VYdi">
+        <property id="1193676396447" name="virtualPackage" index="3GE5qa" />
         <child id="5169995583184591170" name="smodelAttribute" index="lGtFl" />
       </concept>
       <concept id="1169194658468" name="jetbrains.mps.lang.core.structure.INamedConcept" flags="ng" index="TrEIO">
@@ -47,6 +48,7 @@
   </node>
   <node concept="312cEu" id="6pI8TNb_iF0">
     <property role="TrG5h" value="map_Query" />
+    <property role="3GE5qa" value="Query" />
     <node concept="3Tm1VV" id="6pI8TNb_iF1" role="1B3o_S" />
     <node concept="n94m4" id="6pI8TNb_iF2" role="lGtFl">
       <ref role="n9lRv" to="6hzj:S1MlU93O89" resolve="Query" />
