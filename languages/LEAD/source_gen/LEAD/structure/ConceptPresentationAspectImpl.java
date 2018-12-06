@@ -20,6 +20,9 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
   private ConceptPresentation props_StreamDefinition;
   private ConceptPresentation props_StreamList;
   private ConceptPresentation props_StreamReference;
+  private ConceptPresentation props_name;
+  private ConceptPresentation props_test1;
+  private ConceptPresentation props_test2;
 
   @Override
   @Nullable
@@ -103,6 +106,27 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
           props_StreamReference = cpb.create();
         }
         return props_StreamReference;
+      case LanguageConceptSwitch.name:
+        if (props_name == null) {
+          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.presentationByName();
+          props_name = cpb.create();
+        }
+        return props_name;
+      case LanguageConceptSwitch.test1:
+        if (props_test1 == null) {
+          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.rawPresentation("test1");
+          props_test1 = cpb.create();
+        }
+        return props_test1;
+      case LanguageConceptSwitch.test2:
+        if (props_test2 == null) {
+          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.presentationByName();
+          props_test2 = cpb.create();
+        }
+        return props_test2;
     }
     return null;
   }

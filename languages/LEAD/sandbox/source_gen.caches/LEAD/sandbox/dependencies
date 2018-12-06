@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <dependenciesRoot>
+  <dependency className="LEAD.sandbox.asd" file="asd.java" />
   <dependency className="LEAD.sandbox.map_Query" file="map_Query.java" />
 </dependenciesRoot>
 

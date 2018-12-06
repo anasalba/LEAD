@@ -23,6 +23,9 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
   /*package*/ final ConceptDescriptor myConceptStreamDefinition = createDescriptorForStreamDefinition();
   /*package*/ final ConceptDescriptor myConceptStreamList = createDescriptorForStreamList();
   /*package*/ final ConceptDescriptor myConceptStreamReference = createDescriptorForStreamReference();
+  /*package*/ final ConceptDescriptor myConceptname = createDescriptorForname();
+  /*package*/ final ConceptDescriptor myConcepttest1 = createDescriptorFortest1();
+  /*package*/ final ConceptDescriptor myConcepttest2 = createDescriptorFortest2();
   private final LanguageConceptSwitch myIndexSwitch;
 
   public StructureAspectDescriptor() {
@@ -31,7 +34,7 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
 
   @Override
   public Collection<ConceptDescriptor> getDescriptors() {
-    return Arrays.asList(myConceptAttributeDefinition, myConceptAttributeList, myConceptCheck, myConceptEnrich, myConceptFrom, myConceptMatch, myConceptNamedStreamReference, myConceptQuery, myConceptStreamDefinition, myConceptStreamList, myConceptStreamReference);
+    return Arrays.asList(myConceptAttributeDefinition, myConceptAttributeList, myConceptCheck, myConceptEnrich, myConceptFrom, myConceptMatch, myConceptNamedStreamReference, myConceptQuery, myConceptStreamDefinition, myConceptStreamList, myConceptStreamReference, myConceptname, myConcepttest1, myConcepttest2);
   }
 
   @Override
@@ -60,6 +63,12 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
         return myConceptStreamList;
       case LanguageConceptSwitch.StreamReference:
         return myConceptStreamReference;
+      case LanguageConceptSwitch.name:
+        return myConceptname;
+      case LanguageConceptSwitch.test1:
+        return myConcepttest1;
+      case LanguageConceptSwitch.test2:
+        return myConcepttest2;
       default:
         return null;
     }
@@ -145,18 +154,43 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
   }
   private static ConceptDescriptor createDescriptorForStreamList() {
     ConceptDescriptorBuilder2 b = new ConceptDescriptorBuilder2("LEAD", "StreamList", 0xebf7f592fe9245eeL, 0xaac5a2d99c69cfa1L, 0x45a737ba1a53ede4L);
-    b.class_(false, false, false);
+    b.class_(false, false, true);
     b.origin("r:d1327b1c-416a-4135-aab6-1491ee7f8037(LEAD.structure)/5019041582172859876");
     b.version(2);
-    b.aggregate("streams", 0x45a737ba1a53ede5L).target(0xebf7f592fe9245eeL, 0xaac5a2d99c69cfa1L, 0x45a737ba1a53cafdL).optional(false).ordered(true).multiple(true).origin("5019041582172859877").done();
+    b.aggregate("streams", 0x45a737ba1a53ede5L).target(0xebf7f592fe9245eeL, 0xaac5a2d99c69cfa1L, 0x104ecb43706eb008L).optional(false).ordered(true).multiple(true).origin("5019041582172859877").done();
     return b.create();
   }
   private static ConceptDescriptor createDescriptorForStreamReference() {
     ConceptDescriptorBuilder2 b = new ConceptDescriptorBuilder2("LEAD", "StreamReference", 0xebf7f592fe9245eeL, 0xaac5a2d99c69cfa1L, 0x45a737ba1a53cafdL);
-    b.class_(false, false, false);
+    b.class_(false, false, true);
     b.origin("r:d1327b1c-416a-4135-aab6-1491ee7f8037(LEAD.structure)/5019041582172850941");
     b.version(2);
     b.associate("stream", 0x45a737ba1a53cafeL).target(0xebf7f592fe9245eeL, 0xaac5a2d99c69cfa1L, 0xe01c95e890f4232L).optional(false).origin("5019041582172850942").done();
+    return b.create();
+  }
+  private static ConceptDescriptor createDescriptorForname() {
+    ConceptDescriptorBuilder2 b = new ConceptDescriptorBuilder2("LEAD", "name", 0xebf7f592fe9245eeL, 0xaac5a2d99c69cfa1L, 0x2febcd1a6a4257c7L);
+    b.class_(false, false, false);
+    b.parent(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L);
+    b.origin("r:d1327b1c-416a-4135-aab6-1491ee7f8037(LEAD.structure)/3453079052645193671");
+    b.version(2);
+    return b.create();
+  }
+  private static ConceptDescriptor createDescriptorFortest1() {
+    ConceptDescriptorBuilder2 b = new ConceptDescriptorBuilder2("LEAD", "test1", 0xebf7f592fe9245eeL, 0xaac5a2d99c69cfa1L, 0x2febcd1a6a425774L);
+    b.class_(false, false, false);
+    b.origin("r:d1327b1c-416a-4135-aab6-1491ee7f8037(LEAD.structure)/3453079052645193588");
+    b.version(2);
+    b.aggregate("name", 0x2febcd1a6a4257caL).target(0xebf7f592fe9245eeL, 0xaac5a2d99c69cfa1L, 0x2febcd1a6a4257c7L).optional(true).ordered(true).multiple(false).origin("3453079052645193674").done();
+    return b.create();
+  }
+  private static ConceptDescriptor createDescriptorFortest2() {
+    ConceptDescriptorBuilder2 b = new ConceptDescriptorBuilder2("LEAD", "test2", 0xebf7f592fe9245eeL, 0xaac5a2d99c69cfa1L, 0x2febcd1a6a425777L);
+    b.class_(false, false, true);
+    b.parent(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L);
+    b.origin("r:d1327b1c-416a-4135-aab6-1491ee7f8037(LEAD.structure)/3453079052645193591");
+    b.version(2);
+    b.aggregate("test1", 0x2febcd1a6a42577aL).target(0xebf7f592fe9245eeL, 0xaac5a2d99c69cfa1L, 0x2febcd1a6a425774L).optional(false).ordered(true).multiple(false).origin("3453079052645193594").done();
     return b.create();
   }
 }
