@@ -213,8 +213,8 @@
       <node id="1175100043299827720" at="129,33,130,71" concept="0" />
       <node id="1175100043299827720" at="130,71,131,91" concept="0" />
       <node id="1175100043299827720" at="131,91,132,17" concept="0" />
-      <node id="1175100043299827721" at="132,17,133,200" concept="0" />
-      <node id="1175100043299827720" at="133,200,134,22" concept="4" />
+      <node id="3689888904377517226" at="132,17,133,169" concept="0" />
+      <node id="1175100043299827720" at="133,169,134,22" concept="4" />
       <node id="1175100043299827720" at="127,0,136,0" concept="6" trace="createDescriptorForNamedStreamReference#()Ljetbrains/mps/smodel/runtime/ConceptDescriptor;" />
       <scope id="1175100043299827720" at="56,54,57,45" />
       <scope id="1175100043299827720" at="127,78,134,22">

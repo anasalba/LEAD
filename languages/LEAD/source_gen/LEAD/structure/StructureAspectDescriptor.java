@@ -130,7 +130,7 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
     b.parent(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L);
     b.origin("r:d1327b1c-416a-4135-aab6-1491ee7f8037(LEAD.structure)/1175100043299827720");
     b.version(2);
-    b.aggregate("stream", 0x104ecb43706eb009L).target(0xebf7f592fe9245eeL, 0xaac5a2d99c69cfa1L, 0x45a737ba1a53cafdL).optional(false).ordered(true).multiple(false).origin("1175100043299827721").done();
+    b.associate("stream", 0x33351e689e13c4aaL).target(0xebf7f592fe9245eeL, 0xaac5a2d99c69cfa1L, 0xe01c95e890f4232L).optional(false).origin("3689888904377517226").done();
     return b.create();
   }
   private static ConceptDescriptor createDescriptorForQuery() {
